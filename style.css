@@ -14,29 +14,61 @@
 }
 
 @font-face {
-    font-family: 'PPNeueMachina';
-    src: url('../fonts/PPNeueMachina-Light.otf') format('opentype');
-    font-weight: 300;
+    font-family: 'Benzin';
+    src: url('./fonts/Benzin-Medium.woff2') format('woff2'),
+        url('./fonts/Benzin-Medium.woff') format('woff'),
+        url('./fonts/Benzin-Medium.ttf') format('truetype');
+    font-weight: 500;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Benzin';
-    src: url('../fonts/Benzin-Medium.woff2') format('woff2'),
-        url('../fonts/Benzin-Medium.woff') format('woff'),
-        url('../fonts/Benzin-Medium.ttf') format('truetype');
-    font-weight: 500;
+    src: url('./fonts/Benzin-Regular.woff2') format('woff2'),
+        url('./fonts/Benzin-Regular.woff') format('woff'),
+        url('./fonts/Benzin-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
-    font-family: 'PPNeueMachina';
-    src: url('../fonts/PPNeueMachina-Extrabold.otf') format('opentype');
+    font-family: 'Benzin';
+    src: url('./fonts/Benzin-Bold.woff2') format('woff2'),
+        url('./fonts/PPNeueMachina-Ultrabold.otf') format('woff'),
+        url('./fonts/PPNeueMachina-Ultrabold.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('./fonts/PPNeueMachina-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('./fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
-    font-display: swap;
+}
+
+/* если у тебя появится жирная версия (например, PPNeueMachina-Bold.otf), добавь так: */
+/*
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url('./fonts/PPNeueMachina-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+*/
+
+:root {
+    --font-family: "Benzin-Medium", sans-serif;
+    --second-family: "PP Neue Machina", sans-serif;
+    --third-family: "Benzin-Regular", sans-serif;
+    --font3: "Benzin-Bold", sans-serif;
 }
 
 body {
@@ -103,7 +135,6 @@ body {
     display: block;
 }
 
-.site-main {}
 
 
 .hero-text {
@@ -111,9 +142,10 @@ body {
 }
 
 .main-title {
+    font-family: var(--second-family);
     font-weight: 800;
     font-size: 160px;
-    font-family: 'PPNeueMachina', sans-serif;
+    line-height: 112%;
     text-align: center;
     color: #000;
 }
@@ -265,17 +297,22 @@ body {
 }
 
 .section-different__line {
-    font-weight: 300;
+    font-family: var(--second-family);
+    font-weight: 800;
     font-size: 96px;
+    line-height: 112%;
+    letter-spacing: 0.05em;
+    text-align: right;
+    color: #63d92b;
+}
+
+.zapyataya {
     color: #000;
 }
 
 .color {
-    font-weight: 800;
-    font-size: 96px;
-    letter-spacing: 0.05em;
-    text-align: right;
-    color: #63d92b;
+    font-weight: 300;
+    color: #000;
 }
 
 .diffrent-subtitle {
@@ -295,9 +332,7 @@ body {
     /* добавить троеточие, если текст обрезается */
 }
 
-.portfolio-section {}
 
-.portfolio-container {}
 
 .portfolio-header {
     display: flex;
@@ -321,42 +356,38 @@ body {
     gap: 40px;
 }
 
-.polygon-deco {}
 
 .portfolio-filters {
     background: #000;
     display: flex;
     align-items: center;
     gap: 20px;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
     max-width: 902px;
+    padding-left: 20px;
+    padding-right: 30px;
     height: 127px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin: 0 auto;
-    /* центрирует по горизонтали */
-    box-sizing: border-box;
-    /* чтобы padding не ломал ширину */
-    padding: 0 20px;
-    /* отступы слева и справа */
 }
 
 .filter-btn {
-    font-family: 'Benzin', sans-serif;
-    border-radius: 100px;
-    background: #fff;
-    font-weight: 400;
-    height: 56px;
-    width: 246px;
+    font-family: 'Benzin';
+    font-weight: 500;
     font-size: 20px;
     letter-spacing: 0.05em;
     text-align: center;
-    border: none;
     color: #000;
+    background: #fff;
+    border: none;
+    border-radius: 100px;
+    height: 56px;
+    width: 246px;
 }
+
 
 .filter-btn:hover {
     color: #fff;
@@ -386,17 +417,6 @@ body {
     color: #fff;
 }
 
-.showcase-main {}
-
-.showcase-nav {}
-
-.prev {}
-
-.arrow-icon {}
-
-.showcase-image-placeholder {}
-
-.next {}
 
 .showcase-swiper {
     width: 100%;
@@ -526,91 +546,81 @@ body {
 
 .step-title {
     font-family: 'Benzin', sans-serif;
-    margin-top: 22px;
-    margin-bottom: 22px;
     font-weight: 400;
     font-size: 64px;
     letter-spacing: 0.05em;
-    margin-top: 22px;
     color: #000;
+    margin: 22px 0;
 }
 
 .service-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px 89px;
+    display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
-
-/* Центрируем последние 2 кнопки */
-.service-steps> :nth-child(7),
-.service-steps> :nth-child(8) {
-    grid-column: span 1;
+/* Ряды */
+.step-row {
+    display: flex;
+    gap: 20px;
 }
 
-.service-steps> :nth-child(7) {
-    grid-column-start: 2;
+.row-1 {
+    margin-top: 22px;
 }
 
+.row-3 {
+    margin-bottom: 22px;
+}
+
+/* Кнопки */
 .btn-secondary {
     font-family: 'Benzin', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    padding: 21px 0;
-    width: 437px;
-    background: #000;
-    border-radius: 100px;
-    letter-spacing: 0.05em;
-    color: #fff;
-    white-space: nowrap;
+    font-size: 20px;
+    text-transform: uppercase;
+    height: 84px;
     border: none;
-    margin-bottom: 31px;
+    border-radius: 100px;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-
+/* Индивидуальные ширины */
 .btn-step-1 {
     width: 437px;
-    height: 84px;
 }
 
 .btn-step-2 {
     width: 558px;
-    height: 84px;
 }
 
 .btn-step-3 {
     width: 380px;
-    height: 84px;
 }
 
 .btn-step-4 {
     width: 486px;
-    height: 84px;
 }
 
 .btn-step-5 {
     width: 486px;
-    height: 84px;
 }
 
 .btn-step-6 {
     width: 410px;
-    height: 84px;
 }
 
 .btn-step-7 {
     width: 226px;
-    height: 84px;
 }
 
 .btn-step-8 {
     width: 226px;
-    height: 84px;
 }
 
 .payment-description {
@@ -624,7 +634,6 @@ body {
 
 .form-section {
     padding: 60px;
-    /* Добавил padding, чтобы форма не прилипала к краям */
 }
 
 .form-wrapper {
@@ -638,24 +647,59 @@ body {
     margin: 0 auto;
 }
 
+input,
+textarea {
+    font-family: 'PP Neue Machina';
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 112%;
+    letter-spacing: 0.05em;
+    color: #969696;
+}
+
+.samo {
+    font-family: 'PP Neue Machina';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 112%;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.agree {
+    font-family: 'PP Neue Machina';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 112%;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+label {
+    font-family: 'PP Neue Machina';
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 112%;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
 .form-group-3 label {
+    font-family: 'PP Neue Machina';
     font-weight: 800;
     font-size: 24px;
     line-height: 112%;
     letter-spacing: 0.05em;
     color: #fff;
     display: block;
-    /* Сделал label блочным, чтобы input был на новой строке */
 }
 
 .form-group-3 input {
     border-radius: 30px;
     width: 100%;
-    /* Установил 100%, чтобы input занимал всю доступную ширину */
     height: 80px;
     background: #fff;
     margin-top: 20px;
-    /* Уменьшил отступ, чтобы было ближе к макету */
     font-weight: 800;
     font-size: 24px;
     border: none;
@@ -664,7 +708,6 @@ body {
     letter-spacing: 0.05em;
     color: #969696;
     box-sizing: border-box;
-    /* Добавил box-sizing */
 }
 
 .contact-form {
@@ -832,7 +875,6 @@ input[type="checkbox"] {
     background: #63d92b;
     border-radius: 100px;
     width: 100%;
-    /* Установил 100% для адаптивности */
     height: 82px;
     font-weight: 400;
     font-size: 32px;
@@ -841,10 +883,8 @@ input[type="checkbox"] {
     color: #000;
     font-family: 'Benzin', sans-serif;
     border: none;
-    /* Убрал стандартный border */
     cursor: pointer;
     margin-top: 40px;
-    /* Отступ сверху */
 }
 
 .form-group-4 {
