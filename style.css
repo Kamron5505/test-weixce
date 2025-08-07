@@ -54,15 +54,22 @@
     font-style: normal;
 }
 
-/* если у тебя появится жирная версия (например, PPNeueMachina-Bold.otf), добавь так: */
-/*
-@font-face {
-  font-family: 'PP Neue Machina';
-  src: url('./fonts/PPNeueMachina-Bold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
+/* ✅ Контейнер */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
 }
-*/
+
+/* ✅ Сброс отступов, чтобы убрать скролл */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 
 :root {
     --font-family: "Benzin-Medium", sans-serif;
@@ -135,6 +142,73 @@ body {
     display: block;
 }
 
+/* ✅ Контейнер */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+/* ✅ Сброс отступов, чтобы убрать скролл */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Секция */
+.portfolio {
+    background: black;
+    padding: 40px 0;
+}
+
+.portfolio__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio__title {
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.portfolio__arrow {
+    width: 30px;
+    height: auto;
+}
+
+/* ✅ Меню */
+.portfolio__menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio__btn {
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 12px 30px;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.portfolio__btn:hover {
+    background-color: #ddd;
+}
 
 
 .hero-text {
@@ -144,9 +218,10 @@ body {
 .main-title {
     font-family: var(--second-family);
     font-weight: 800;
-    font-size: 160px;
-    line-height: 112%;
-    text-align: center;
+    font-size: 180px;
+    text-align: left;
+    text-wrap: nowrap;
+    margin: auto;
     color: #000;
 }
 
@@ -503,7 +578,7 @@ body {
 .showcase-footer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 150px;
     /* фиксированный отступ между блоками */
     width: 100%;
