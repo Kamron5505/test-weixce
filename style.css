@@ -1441,8 +1441,22 @@
         }
     }
 
-    /* Планшеты */
+    /* Планшеты и смартфоны */
     @media (max-width: 1024px) {
+        .section-different {
+            display: flex;
+            flex-direction: column;
+            /* чтобы элементы шли сверху вниз */
+            justify-content: center;
+            /* центр по вертикали */
+            align-items: center;
+            /* центр по горизонтали */
+            text-align: center;
+            padding: 40px 15px;
+            height: 100vh;
+            /* растягиваем на всю высоту экрана для центрирования */
+        }
+
         .section-different__line {
             font-size: 32px;
         }
@@ -1459,10 +1473,6 @@
 
     /* Телефоны */
     @media (max-width: 768px) {
-        .section-different {
-            padding: 40px 15px;
-        }
-
         .section-different__line {
             font-size: 24px;
         }
@@ -1480,6 +1490,314 @@
     @media (max-width: 480px) {
         .section-different__line {
             font-size: 20px;
+        }
+
+        .different-line {
+            gap: 10px;
+            margin: auto;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+        }
+
+        .different-icon {
+            width: 14px;
+        }
+
+        .diffrent-subtitle {
+            font-size: 14px;
+        }
+    }
+
+    /* ---------- Центрирование секции для планшетов и смартфонов ---------- */
+
+    /* Общее правило для планшетов и меньше */
+    @media (max-width: 1024px) {
+        .section-different {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* элементы сверху вниз */
+            justify-content: center;
+            /* вертикальное центрирование */
+            align-items: center;
+            /* горизонтальное центрирование */
+            text-align: center;
+            /* текст по центру */
+            padding: 40px 16px;
+            /* внутренние отступы */
+            min-height: calc(100vh - var(--site-header-height, 0px));
+            /* центр по высоте с учётом шапки */
+        }
+
+        /* Внутренний контейнер: переопределяем предыдущие align-items */
+        .section-different__content {
+            width: 100%;
+            max-width: 1100px;
+            /* ограничиваем ширину для читаемости */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* важно: чтобы текст и линии внутри были по центру */
+            justify-content: center;
+            gap: 20px;
+            padding: 0 12px;
+        }
+
+        .different-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* центрируем иконку + заголовок */
+            gap: 18px;
+            width: 100%;
+        }
+
+        .section-different__line {
+            font-size: 32px;
+            line-height: 1.05;
+            white-space: normal;
+            /* разрешаем перенос строки */
+            word-break: break-word;
+            margin: 0;
+        }
+
+        .different-icon {
+            width: 25px;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .diffrent-subtitle {
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+            color: inherit;
+        }
+    }
+
+    /* Меньшие телефоны */
+    @media (max-width: 768px) {
+        .section-different {
+            padding: 36px 14px;
+            min-height: calc(100vh - var(--site-header-height, 0px));
+        }
+
+        .section-different__line {
+            font-size: 24px;
+        }
+
+        .different-icon {
+            width: 18px;
+        }
+
+        .diffrent-subtitle {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .section-diffrent {
+            display: flex;
+            flex-direction: column;
+            /* элементы сверху вниз */
+            justify-content: center;
+            /* центр по вертикали */
+            align-items: center;
+            /* центр по горизонтали */
+            text-align: center;
+            /* выравнивание текста */
+            padding: 0 15px;
+            /* убираем паддинг сверху и снизу, оставляем только слева и справа */
+            height: 100vh;
+            /* чтобы занять всю высоту экрана */
+            box-sizing: border-box;
+        }
+
+        .section-different__line {
+            font-size: 32px;
+        }
+
+        .different-icon {
+            width: 25px;
+            height: auto;
+        }
+
+        .diffrent-subtitle {
+            font-size: 18px;
+        }
+    }
+
+    /* Планшеты (до 992px) */
+    @media (max-width: 992px) {
+        .payment-container {
+            padding: 20px 30px;
+        }
+
+        .payment-container .section-title {
+            font-size: 24px;
+        }
+
+        .payment-container .payment-description {
+            font-size: 16px;
+            padding: 12px 16px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .btn.btn-cta-secondary {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            /* отступ от текста */
+            text-align: center;
+            /* выравнивание текста в кнопке */
+        }
+    }
+
+    @media (max-width: 500px) {
+        .container-with-text-and-button {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+
+    /* Телефоны (до 576px) */
+    @media (max-width: 576px) {
+        .payment-container {
+            padding: 16px;
+        }
+
+        .payment-container .section-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-size: 25px;
+        }
+
+        .payment-container .payment-description {
+            font-size: 14px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            white-space: normal;
+            /* разрешаем перенос строк */
+            line-height: 1.4;
+            /* компактнее */
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .section-diffrent {
+            display: flex;
+            flex-direction: column;
+            /* элементы сверху вниз */
+            justify-content: center;
+            /* центр по вертикали */
+            align-items: center;
+            /* центр по горизонтали */
+            text-align: center;
+            /* выравнивание текста */
+            padding: 0 15px;
+            /* убираем паддинг сверху и снизу, оставляем только слева и справа */
+            height: 100vh;
+            /* чтобы занять всю высоту экрана */
+            box-sizing: border-box;
+        }
+
+        .section-different__line {
+            font-size: 36px;
+            /* увеличил с 32px до 36px */
+        }
+
+        .different-icon {
+            width: 25px;
+            height: auto;
+        }
+
+        .diffrent-subtitle {
+            font-size: 24px;
+            /* увеличил с 18px до 20px */
+        }
+    }
+
+    /* Очень маленькие телефоны */
+    @media (max-width: 480px) {
+        .section-different {
+            padding: 0;
+            min-height: calc(100vh - var(--site-header-height, 0px));
+        }
+
+        .section-different__line {
+            font-size: 20px;
+        }
+
+        .diffrent-subtitle {
+            text-wrap: wrap;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .swiper-slide {
+            width: 90%;
+            aspect-ratio: 3 / 2;
+            /* сохраняем пропорции */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* обрезка, чтобы картинка заполняла весь слайд */
+            border-radius: 8px;
+            /* необязательно, но выглядит аккуратнее */
+        }
+
+        .btn.btn-cta-secondary {
+            display: block;
+            /* перенос на новую строку */
+            margin: 10px 0 0;
+            /* отступ сверху */
+            width: fit-content;
+            /* ширина по тексту */
+        }
+
+        .showcase-info {
+            font-size: 14px;
+            white-space: normal;
+            /* разрешаем перенос */
+            overflow-wrap: break-word;
+            /* переносим длинные слова */
+            word-break: break-word;
+            /* для старых браузеров */
+        }
+
+        .btn.btn-cta-secondary {
+            font-size: 14px;
+            padding: 10px 18px;
+            border-radius: 6px;
+            white-space: nowrap;
+            margin-left: 8px;
+            /* небольшой отступ от текста */
+        }
+
+
+        .showcase-title {
+            font-size: 24px;
         }
 
         .different-line {
