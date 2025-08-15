@@ -1204,6 +1204,11 @@
             gap: 10px;
         }
 
+        .partners-container {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
         .partners-header-text {
             font-size: 24px;
             text-align: center;
