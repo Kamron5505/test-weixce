@@ -1209,6 +1209,11 @@
             flex-wrap: nowrap;
         }
 
+        .partners-header {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
         .partners-header-text {
             font-size: 24px;
             text-align: center;
