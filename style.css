@@ -1152,16 +1152,16 @@
             text-align: center;
         }
 
-        /* Адаптив для фильтров портфолио */
         .portfolio-filters {
-            gap: 10px;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .portfolio-filters .filter-btn {
-            padding: 8px 15px;
-            font-size: 14px;
+        .portfolio-filters button {
+            flex: 1 1 calc(33.333% - 10px);
+            /* три кнопки в строку */
+            max-width: 220px;
         }
     }
 
@@ -1236,20 +1236,9 @@
             text-align: center;
         }
 
-        /* Адаптив для фильтров портфолио */
-        .portfolio-filters {
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-filters .filter-btn {
-            padding: 8px 15px;
-            font-size: 14px;
-        }
-
-        .portfolio-filters .filter-btn {
-            padding: 6px 10px;
-            font-size: 12px;
+        .portfolio-filters button {
+            flex: 1 1 calc(50% - 8px);
+            /* две кнопки в строку */
+            max-width: 180px;
         }
     }
