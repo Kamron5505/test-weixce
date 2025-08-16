@@ -1242,6 +1242,7 @@
 
         .payment-description {
             margin-top: 20px;
+            text-wrap: wrap;
         }
 
         .section-title {
