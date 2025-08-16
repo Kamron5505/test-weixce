@@ -938,6 +938,7 @@
         font-weight: 800;
         font-size: 24px;
         letter-spacing: 0.05em;
+        font-family: 'PP Neue Machina';
         color: #fff;
     }
 
@@ -1047,36 +1048,6 @@
         color: #fff;
     }
 
-    .payment-container {
-        max-width: 800px;
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-
-        /* ключевые свойства для переноса текста */
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 20px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .payment-description {
-        font-size: 16px;
-        line-height: 1.8;
-        margin-bottom: 15px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        white-space: normal;
-        /* важная строчка — чтобы текст переносился */
-    }
-
     .footer-bottom {
         max-width: 1548px;
         margin: 40px auto 0;
@@ -1093,6 +1064,39 @@
 
     /* Планшеты и меньше */
     @media (max-width: 1024px) {
+        .form-row {
+            flex-direction: column;
+            /* поля в колонку */
+            gap: 15px;
+        }
+
+        .radio-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-wrapper {
+            width: 90%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .form-row,
+        .radio-group {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group,
+        .form-group-3,
+        .form-group-4,
+        .form-group-5,
+        .form-group-6,
+        textarea,
+        .btn-submit {
+            width: 100%;
+            box-sizing: border-box;
+        }
 
         /* Скрываем элементы навигации и header */
         .site-nav>a.main-logo,
@@ -1247,10 +1251,101 @@
         .payment-description {
             font-size: 15px;
         }
+
+        .footer-content {
+            justify-content: space-around;
+        }
+
+        .footer-contacts,
+        .footer-logo,
+        .footer-socials {
+            flex: 1 1 200px;
+            margin-bottom: 20px;
+        }
     }
 
     /* Телефоны */
     @media (max-width: 767px) {
+        .form-wrapper {
+            width: 95%;
+            /* контейнер почти весь экран */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-wrapper {
+            width: 95%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-row,
+        .radio-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group,
+        .form-group-3,
+        .form-group-4,
+        .form-group-5,
+        .form-group-6,
+        textarea,
+        .btn-submit {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            font-family: 'Benzin', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            border: none;
+            border-radius: 100px;
+            padding: 12px 24px;
+            background-color: #63d92b;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-contacts,
+        .footer-logo,
+        .footer-socials {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 120px;
+        }
+
+
+        .form-row {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-group {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group,
+        .form-group-3,
+        .form-group-4,
+        .form-group-5,
+        .form-group-6 {
+            width: 100%;
+            /* растягиваем все блоки */
+            box-sizing: border-box;
+        }
 
         /* Скрываем элементы навигации, header и изображения */
         .site-nav>a.main-logo,
