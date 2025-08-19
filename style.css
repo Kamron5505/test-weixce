@@ -692,7 +692,6 @@
         font-family: 'PP Neue Machina';
         font-weight: 800;
         font-size: 24px;
-        line-height: 112%;
         letter-spacing: 0.05em;
         color: #969696;
     }
@@ -1065,6 +1064,10 @@
             flex-direction: column;
             gap: 15px;
         }
+        .project-descriptions{
+            font-size: 22px;
+            text-align: center;
+        }
 
         .radio-group {
             flex-direction: column;
@@ -1262,7 +1265,7 @@
         .footer-content {
             justify-content: space-around;
         }
-
+        
         .footer-contacts,
         .footer-logo,
         .footer-socials {
@@ -1274,6 +1277,9 @@
         .checkbox-label input:checked+.custom-checkbox {
             width: 16px;
             height: 16px;
+        }
+        textarea::placeholder{
+            font-size: 15px;
         }
     }
 
@@ -1296,6 +1302,11 @@
             flex-direction: column;
             gap: 10px;
         }
+          .project-descriptions{
+            font-size: 20px;
+            text-align: center;
+        }
+
 
         .form-group input {
             max-width: 100%;
