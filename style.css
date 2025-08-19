@@ -737,7 +737,6 @@
     .form-group-3 input {
         border-radius: 30px;
         width: 100%;
-        height: 80px;
         background: #fff;
         margin-top: 20px;
         font-weight: 800;
@@ -797,7 +796,6 @@
         border-radius: 30px;
         width: 100%;
         /* Установил 100% для адаптивности */
-        height: 80px;
         padding: 0 30px;
         /* Убрал padding-left и добавил padding */
         border: none;
@@ -915,7 +913,6 @@
         background: #63d92b;
         border-radius: 100px;
         width: 100%;
-        height: 82px;
         font-weight: 400;
         font-size: 32px;
         letter-spacing: 0.05em;
@@ -1066,7 +1063,6 @@
     @media (max-width: 1024px) {
         .form-row {
             flex-direction: column;
-            /* поля в колонку */
             gap: 15px;
         }
 
@@ -1079,6 +1075,16 @@
             width: 90%;
             padding: 15px;
             box-sizing: border-box;
+        }
+
+        input {
+            max-width: 260px;
+            font-size: 15px;
+
+        }
+
+        input::placeholder {
+            font-size: 15px;
         }
 
         .form-row,
@@ -1263,13 +1269,18 @@
             flex: 1 1 200px;
             margin-bottom: 20px;
         }
+
+        .checkbox-label .custom-checkbox,
+        .checkbox-label input:checked+.custom-checkbox {
+            width: 16px;
+            height: 16px;
+        }
     }
 
     /* Телефоны */
     @media (max-width: 767px) {
         .form-wrapper {
             width: 95%;
-            /* контейнер почти весь экран */
             padding: 10px;
             box-sizing: border-box;
         }
@@ -1286,28 +1297,40 @@
             gap: 10px;
         }
 
-        .form-group,
-        .form-group-3,
-        .form-group-4,
-        .form-group-5,
-        .form-group-6,
-        textarea,
-        .btn-submit {
-            width: 100%;
-            box-sizing: border-box;
+        .form-group input {
+            max-width: 100%;
+            font-size: 14px;
+            padding: 12px 10px;
+        }
+
+        .form-group label {
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        input::placeholder {
+            font-size: 14px;
+        }
+
+        .agree {
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        .checkbox-label .custom-checkbox,
+        .checkbox-label input:checked+.custom-checkbox {
+            width: 14px;
+            height: 14px;
         }
 
         .btn-submit {
-            font-family: 'Benzin', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            letter-spacing: 0.05em;
-            border: none;
-            border-radius: 100px;
-            padding: 12px 24px;
-            background-color: #63d92b;
-            color: #000;
-            cursor: pointer;
+            font-size: 12px;
+            padding: 15px 10px;
+        }
+
+        .checkbox-label .custom-checkbox {
+            width: 18px;
+            height: 18px;
         }
 
         .footer-content {
@@ -1502,12 +1525,10 @@
         .payment-description {
             font-size: 14px;
             text-align: left;
-            /* читаемость на узких экранах */
         }
 
         .payment-container {
             width: 95%;
-            /* чуть больше ширины на мобильных */
             padding: 15px;
         }
     }
