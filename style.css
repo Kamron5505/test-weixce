@@ -1426,6 +1426,10 @@
                 position: absolute;
                 top: -245px;
                 left: -20px;
+                max-width: 450px;
+            }
+           .lines-container .lines-img{
+                width: 500px;
             }
 
             .payment-container {
