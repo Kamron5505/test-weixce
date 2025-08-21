@@ -1360,6 +1360,21 @@
                 font-style: italic;
             }
 
+            .label {
+                letter-spacing: 2px;
+                /* такой же интервал как на пк */
+            }
+
+            /* Input */
+            input {
+                letter-spacing: 2px;
+            }
+
+            /* Placeholder */
+            input::placeholder {
+                letter-spacing: 2px;
+            }
+
             .checkbox-label .custom-checkbox,
             .checkbox-label input:checked+.custom-checkbox {
                 width: 14px;
