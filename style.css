@@ -1,1560 +1,1583 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1646px;
-        margin: 0 auto;
-        padding: 0 42px;
-    }
-
-    @font-face {
-        font-family: 'Benzin';
-        src: url('./fonts/Benzin-Medium.woff2') format('woff2'),
-            url('./fonts/Benzin-Medium.woff') format('woff'),
-            url('./fonts/Benzin-Medium.ttf') format('truetype');
-        font-weight: 500;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'Benzin';
-        src: url('./fonts/Benzin-Regular.woff2') format('woff2'),
-            url('./fonts/Benzin-Regular.woff') format('woff'),
-            url('./fonts/Benzin-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'Benzin';
-        src: url('./fonts/Benzin-Bold.woff2') format('woff2'),
-            url('./fonts/PPNeueMachina-Ultrabold.otf') format('woff'),
-            url('./fonts/PPNeueMachina-Ultrabold.otf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'PP Neue Machina';
-        src: url('./fonts/PPNeueMachina-Light.otf') format('opentype');
-        font-weight: 300;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'PP Neue Machina';
-        src: url('./fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
-        font-weight: 800;
-        font-style: normal;
-    }
-
-    .container {
-        max-width: 1800px;
-        /* было, например, 1280px */
-        padding: 0 42px;
-        margin: 0 auto;
-    }
-
-
-
-    /* ✅ Сброс отступов, чтобы убрать скролл */
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #121212;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    #preloader img {
-        width: 150px;
-        height: auto;
-        /* Без анимации */
-    }
-
-    /* Скрываем основной контент пока грузится */
-    #content {
-        display: none;
-    }
-
-
-    :root {
-        --font-family: "Benzin-Medium", sans-serif;
-        --second-family: "PP Neue Machina", sans-serif;
-        --third-family: "Benzin-Regular", sans-serif;
-        --font3: "Benzin-Bold", sans-serif;
-    }
-
-    body {
-        background-color: #fff;
-        color: #000;
-    }
-
-    .site-header {
-        background: #171717;
-        padding: 22px 0;
-        border-radius: 100px;
-        margin-left: 42px;
-        margin-right: 42px;
-        margin-top: 40px;
-    }
-
-    .header-container {
-        max-width: 1646px;
-        margin: 0 auto;
-        padding: 0 42px;
-    }
-
-    .site-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .main-title {
-        font-family: var(--second-family);
-        font-weight: 800;
-        font-size: clamp(48px, 12vw, 180px);
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 100%;
-        display: block;
-        color: #000;
-    }
-
-
-    .burger-menu {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-    }
-
-    .burger-icon {
-        width: 28px;
-        height: auto;
-        display: block;
-    }
-
-    .header-btn {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 0.05em;
-        text-align: center;
-        border: none;
-        border-radius: 100px;
-        padding: 12px 24px;
-        background-color: #63d92b;
-        color: #000;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .header-btn:hover {
-        background-color: #fff;
-        transform: translateY(-2px);
-    }
-
-
-    .logo-icon {
-        height: 40px;
-        display: block;
-    }
-
-
-
-    .hero-text {
-        margin-bottom: 40px;
-    }
-
-    .main-title {
-        font-size: clamp(48px, 10vw, 180px);
-        white-space: nowrap;
-        overflow: hidden;
-        text-align: center;
-        text-overflow: ellipsis;
-    }
-
-
-    .highlight {
-        color: #63d92b;
-    }
-
-    .main-subtitle {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        letter-spacing: 0.05em;
-        color: #000;
-        padding-left: 100px;
-    }
-
-    .text-block {
-        font-family: 'Benzin', sans-serif;
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Центровка по горизонтали */
-        /* Расстояние между блоками */
-    }
-
-
-    .text-item {
-        font-weight: 400;
-        font-size: 20px;
-        letter-spacing: 0.05em;
-        color: #63d92b;
-    }
-
-    .text-title {
-        font-weight: 400;
-        font-size: 20px;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    .text-block-1 {
-        background: #171717;
-        border-radius: 33px;
-        padding: 10px 15px;
-        margin-bottom: 34px;
-    }
-
-    .text-block-2 {
-        border-radius: 33px;
-        padding: 10px 15px;
-        background: #171717;
-        max-width: 949px;
-    }
-
-    .text-block-3 {
-        border-radius: 33px;
-        max-width: 841px;
-        padding: 10px 15px;
-        background: #171717;
-        margin-top: 34px;
-    }
-
-    .lines-img {
-        width: 100%;
-        max-width: 1812px;
-    }
-
-    .lines-container {
-        margin-top: 200px;
-    }
-
-
-    .eagle-container {
-        position: relative;
-    }
-
-    .eagle-img {
-        position: absolute;
-        left: -60px;
-        top: -494px;
-
-    }
-
-
-    .partners-header {
-        text-align: center;
-    }
-
-    .partners-header-text {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 0.04em;
-        text-align: center;
-        color: #fff;
-        background-color: #171717;
-        padding: 10px 24px;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    .partners-logos {
-        width: 100%;
-        background: #171717;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 43px 0;
-        margin-bottom: 70px;
-        width: 99.5vw;
-        margin-left: calc(-50vw + 50%);
-    }
-
-
-    .partners-logos div {
-        font-weight: 400;
-        font-size: 32px;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: #fff;
-        font-family: 'Benzin', sans-serif;
-
-    }
-
-    .partners-container {
-        width: 100%;
-    }
-
-    .section-different__content {
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-    }
-
-    .different-line {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .section-different__line {
-        font-family: var(--second-family);
-        font-weight: 800;
-        font-size: 96px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        text-align: right;
-        color: #63d92b;
-    }
-
-    .zapyataya {
-        color: #000;
-    }
-
-    .color {
-        font-weight: 300;
-        color: #000;
-    }
-
-    .diffrent-subtitle {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 400;
-        font-size: 23px;
-        text-align: center;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        color: #000;
-        white-space: nowrap;
-
-        /* запретить перенос текста */
-        overflow: hidden;
-        /* скрыть лишнее, если не влезает */
-        text-overflow: ellipsis;
-        /* добавить троеточие, если текст обрезается */
-    }
-
-
-
-    .portfolio-header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 19px;
-        justify-content: space-between;
-    }
-
-    .section-title {
-        font-weight: 400;
-        font-size: 64px;
-        letter-spacing: 0.05em;
-        color: #000;
-        font-family: 'Benzin', sans-serif;
-    }
-
-    .text-dad {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-
-
-    .portfolio-filters {
-        background: #000;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        justify-content: center;
-        padding: 20px;
-        height: 127px;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .filter-btn {
-        font-family: 'Benzin';
-        font-weight: 500;
-        font-size: 20px;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: #000;
-        background: #fff;
-        border: none;
-        border-radius: 100px;
-        height: 56px;
-        width: 246px;
-    }
-
-
-    .filter-btn:hover {
-        color: #fff;
-        border-radius: 100px;
-        background-color: #63d92b;
-    }
-
-
-    .portfolio-showcase {
-        background: #000;
-        width: 99.5vw;
-        /* вся ширина окна браузера */
-        margin-left: calc(-50vw + 50%);
-        /* выровнять по центру относительно контейнера */
-        overflow: hidden;
-        box-sizing: border-box;
-        padding: 40px 20px;
-    }
-
-    .showcase-title {
-        font-weight: 400;
-        font-size: 32px;
-        margin-top: 50px;
-        padding-left: 87px;
-        margin-bottom: 40px;
-        letter-spacing: 0.05em;
-        font-family: 'Benzin', sans-serif;
-        color: #fff;
-    }
-
-
-    .showcase-swiper {
-        width: 100%;
-        height: 500px;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: white;
-    }
-
-    /* Сброс стилей Swiper'а и задание своих */
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 56px !important;
-        height: 56px !important;
-        background: transparent !important;
-    }
-
-    /* Стили для SVG-кнопок */
-    .custom-swiper-btn {
-        width: 56px;
-        height: 56px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Отступы от краёв слайдера */
-    .swiper-button-prev {
-        left: -70px;
-    }
-
-    .swiper-button-next {
-        right: -70px;
-    }
-
-    /* Чтобы SVG не сжимался */
-    .custom-swiper-btn svg {
-        width: 56px;
-        height: 56px;
-        display: block;
-    }
-
-    .swiper {
-        position: relative;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        outline: none;
-        border: none;
-        box-shadow: none;
-    }
-
-    .swiper-button-prev:focus,
-    .swiper-button-next:focus,
-    .swiper-button-prev:active,
-    .swiper-button-next:active {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
-
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-        display: none !important;
-    }
-
-
-    .showcase-footer {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 150px;
-        /* фиксированный отступ между блоками */
-        width: 100%;
-        padding-top: 30px;
-        padding-bottom: 20px;
-        box-sizing: border-box;
-        color: white;
-    }
-
-
-    .showcase-info {
-        font-family: 'PPNeueMachina', sans-serif;
-        font-weight: 400;
-        font-size: 24px;
-        letter-spacing: 0.05em;
-        margin-top: 30px;
-        color: #fff;
-    }
-
-
-    .btn-cta-secondary {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 0.05em;
-        border: none;
-        border-radius: 100px;
-        padding: 12px 24px;
-        background-color: #63d92b;
-        color: #000;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-
-    .btn-cta-secondary:hover {
-        background-color: #fff;
-        transform: translateY(-2px);
-    }
-
-    .step-title {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 400;
-        font-size: 64px;
-        letter-spacing: 0.05em;
-        color: #000;
-        margin: 22px 0;
-    }
-
-    .service-steps {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    /* Ряды */
-    .step-row {
-        display: flex;
-        gap: 20px;
-    }
-
-    .row-1 {
-        margin-top: 22px;
-    }
-
-    .row-3 {
-        margin-bottom: 22px;
-    }
-
-    /* Кнопки */
-    .btn-secondary {
-        font-family: 'Benzin', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        text-transform: uppercase;
-        height: 84px;
-        border: none;
-        border-radius: 100px;
-        background-color: #000;
-        color: #fff;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Индивидуальные ширины */
-    .btn-step-1 {
-        width: 437px;
-    }
-
-    .btn-step-2 {
-        width: 558px;
-    }
-
-    .btn-step-3 {
-        width: 380px;
-    }
-
-    .btn-step-4 {
-        width: 486px;
-    }
-
-    .btn-step-5 {
-        width: 486px;
-    }
-
-    .btn-step-6 {
-        width: 410px;
-    }
-
-    .btn-step-7 {
-        width: 226px;
-    }
-
-    .btn-step-8 {
-        width: 226px;
-    }
-
-    .payment-description {
-        font-family: 'PPNeueMachina', sans-serif;
-        text-wrap: nowrap;
-        font-weight: 400;
-        font-size: 38px;
-        letter-spacing: 0.05em;
-        color: #000;
-    }
-
-    .form-section {
-        padding: 60px;
-    }
-
-    .form-wrapper {
-        border-radius: 30px;
-        width: 100%;
-        max-width: 1548px;
-        height: auto;
-        background: #171717;
-        padding: 60px;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-
-    input,
-    textarea {
-        font-family: 'PP Neue Machina';
-        font-weight: 800;
-        font-size: 24px;
-        letter-spacing: 0.05em;
-        color: #969696;
-    }
-
-    .samo {
-        font-family: 'PP Neue Machina';
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    .agree {
-        font-family: 'PP Neue Machina';
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    label {
-        font-family: 'PP Neue Machina';
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    .form-group-3 label {
-        font-family: 'PP Neue Machina';
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-        display: block;
-    }
-
-    .form-group input {
-        padding: 20px;
-    }
-
-    .form-group-3 input {
-        border-radius: 30px;
-        width: 100%;
-        background: #fff;
-        margin-top: 20px;
-        font-weight: 800;
-        font-size: 24px;
-        border: none;
-        letter-spacing: 0.05em;
-        color: #969696;
-        box-sizing: border-box;
-
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        /* Отступ между группами полей */
-    }
-
-    .form-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        /* Отступ между полем имени и телефона */
-    }
-
-    .form-group {
-        flex: 1;
-        /* Чтобы группы делили пространство поровну */
-    }
-
-    .form-group label {
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-        display: block;
-        /* Сделал label блочным */
-    }
-
-    .tip-of-client {
-        margin-top: 40px;
-        /* Отступ сверху для блока с выбором клиента */
-        color: #fff;
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    .form-group input {
-        border-radius: 30px;
-        width: 100%;
-        /* Установил 100% для адаптивности */
-        /* Убрал padding-left и добавил padding */
-        border: none;
-        background: #fff;
-        margin-top: 20px;
-        /* Отступ между label и input */
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #969696;
-        box-sizing: border-box;
-        /* Добавил box-sizing */
-    }
-
-    .btn-submit {
-        padding: 20px;
-        font-weight: bolder;
-    }
-
-    .radio-group {
-        display: flex;
-        gap: 40px;
-        /* Отступ между радио-кнопками */
-        margin-top: 20px;
-    }
-
-    .radio-label {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        /* Отступ между кастомным радио и текстом */
-        font-size: 18px;
-        /* Немного уменьшил размер, чтобы было похоже на макет */
-        color: #fff;
-        cursor: pointer;
-    }
-
-    .custom-radio {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        background-color: transparent;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .custom-radio::after {
-        content: '';
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #63d92b;
-        /* Цвет активного состояния */
-        transform: scale(0);
-        transition: transform 0.2s ease-in-out;
-    }
-
-    input[type="radio"]:checked+.custom-radio::after {
-        transform: scale(1);
-    }
-
-    input[type="radio"] {
-        display: none;
-        /* Скрываем стандартную радио-кнопку */
-    }
-
-    .checkbox-label {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        /* Отступ между кастомным чекбоксом и текстом */
-        font-size: 18px;
-        /* Размер шрифта для текста */
-        color: #fff;
-        margin-top: 40px;
-        /* Отступ сверху */
-        cursor: pointer;
-    }
-
-    .custom-checkbox {
-        background: #595959;
-        border-radius: 15px;
-        width: 33px;
-        height: 33px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .form-group-6 {
-        display: flex;
-        gap: 25px;
-    }
-
-    .custom-checkbox::after {
-        content: '';
-        width: 16px;
-        height: 16px;
-        background-color: #63d92b;
-        /* Цвет активного состояния */
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    input[type="checkbox"]:checked+.custom-checkbox::after {
-        opacity: 1;
-    }
-
-    input[type="checkbox"] {
-        display: none;
-        /* Скрываем стандартный чекбокс */
-    }
-
-    .btn-submit {
-        background: #63d92b;
-        border-radius: 100px;
-        width: 100%;
-        font-weight: bold;
-        font-size: 32px;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: #000;
-        font-family: 'Benzin', sans-serif;
-        border: none;
-        cursor: pointer;
-        margin-top: 40px;
-    }
-
-    .form-group-4 {
-        display: flex;
-        align-items: flex-end;
-        gap: 15px;
-    }
-
-    .project-descriptions {
-        text-wrap: nowrap;
-        font-weight: 800;
-        font-size: 24px;
-        letter-spacing: 0.05em;
-        font-family: 'PP Neue Machina';
-        color: #fff;
-    }
-
-    .portfolio-container {
-        max-width: 1646px;
-        margin: auto;
-    }
-
-    textarea:focus {
-        outline: none;
-    }
-
-    textarea {
-        border-radius: 30px;
-        width: 100%;
-        background: #fff;
-        border: none;
-        padding: 30px;
-        box-sizing: border-box;
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #969696;
-        margin-top: 20px;
-        height: 200px;
-        /* Установил высоту для текстовой области */
-        resize: none;
-        /* Запретил изменять размер */
-    }
-
-    textarea::placeholder {
-        color: #969696;
-    }
-
-    .main-footer {
-        background: #000;
-        font-family: 'PPNeueMachina', sans-serif;
-        color: #fff;
-        padding: 60px;
-        /* Отступы сверху, снизу и по бокам */
-        font-family: 'Arial', sans-serif;
-        /* Замените на ваши шрифты, если они другие */
-        position: relative;
-        /* Синяя полоска сверху */
-    }
-
-    .footer-content {
-        display: flex;
-        padding-top: 122px;
-        justify-content: space-between;
-        align-items: flex-start;
-        /* Элементы выравниваются по верхнему краю */
-        max-width: 1548px;
-        /* Максимальная ширина контента */
-        margin: 0 auto;
-        text-align: left;
-        /* Выравнивание текста */
-    }
-
-    .footer-heading {
-        font-weight: 800;
-        font-size: 14px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    .footer-contacts,
-    .footer-socials {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        /* Отступ между строками контактов и ссылок */
-    }
-
-    .contact-link,
-    .social-link {
-        font-family: 'PPNeueMachina', sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-    .contact-link:hover,
-    .social-link:hover {
-        color: #ccc;
-    }
-
-    .contact-address {
-        font-weight: 400;
-        font-size: 14px;
-        letter-spacing: 0.05em;
-        color: #fff;
-    }
-
-
-    .logo-description {
-        font-family: 'PPNeueMachina', sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 112%;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: #fff;
-    }
-
-    .footer-bottom {
-        max-width: 1548px;
-        margin: 40px auto 0;
-        /* Отступ сверху */
-        text-align: right;
-    }
-
-    .footer-copyright {
-        font-size: 14px;
-        font-weight: 400;
-        color: #fff;
-        opacity: 0.6;
-    }
-
-    /* Планшеты и меньше */
-    @media (max-width: 1024px) {
-        .form-row {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .project-descriptions {
-            font-size: 22px;
-            text-align: center;
-        }
-
-        .radio-group {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .form-wrapper {
-            width: 90%;
-            padding: 15px;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
         }
 
-        input {
-            max-width: 260px;
-            font-size: 15px;
-
-        }
-
-        input::placeholder {
-            font-size: 15px;
-        }
-
-        .form-row,
-        .radio-group {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .form-group,
-        .form-group-3,
-        .form-group-4,
-        .form-group-5,
-        .form-group-6,
-        textarea,
-        .btn-submit {
+        .container {
             width: 100%;
-            box-sizing: border-box;
+            max-width: 1646px;
+            margin: 0 auto;
+            padding: 0 42px;
         }
 
-        /* Скрываем элементы навигации и header */
-        .site-nav>a.main-logo,
-        .site-nav>.header-btn,
-        .site-header,
-        .portfolio-icon {
-            display: none !important;
+        @font-face {
+            font-family: 'Benzin';
+            src: url('./fonts/Benzin-Medium.woff2') format('woff2'),
+                url('./fonts/Benzin-Medium.woff') format('woff'),
+                url('./fonts/Benzin-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
         }
 
-        .eagle-img {
-            max-width: 450px;
+        @font-face {
+            font-family: 'Benzin';
+            src: url('./fonts/Benzin-Regular.woff2') format('woff2'),
+                url('./fonts/Benzin-Regular.woff') format('woff'),
+                url('./fonts/Benzin-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
         }
 
+        @font-face {
+            font-family: 'Benzin';
+            src: url('./fonts/Benzin-Bold.woff2') format('woff2'),
+                url('./fonts/PPNeueMachina-Ultrabold.otf') format('woff'),
+                url('./fonts/PPNeueMachina-Ultrabold.otf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-        /* Главный заголовок */
-        .main-title {
+        @font-face {
+            font-family: 'PP Neue Machina';
+            src: url('./fonts/PPNeueMachina-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'PP Neue Machina';
+            src: url('./fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
             font-weight: 800;
-            font-size: 48px;
-            margin-top: 30px;
-            line-height: 1.1;
-            color: #000;
-            word-wrap: break-word;
-            text-wrap: wrap;
-            text-align: center;
+            font-style: normal;
         }
 
-        /* Подзаголовок */
-        .main-subtitle {
-            font-size: 16px;
-            margin-top: 20px;
-            text-align: center;
+        .container {
+            max-width: 1800px;
+            /* было, например, 1280px */
+            padding: 0 42px;
+            margin: 0 auto;
+        }
+
+
+
+        /* ✅ Сброс отступов, чтобы убрать скролл */
+        html,
+        body {
+            margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Другие заголовки */
-        .text-title {
-            font-size: 18px;
-        }
-
-        .different-line {
-            justify-content: center;
-            margin: auto;
-            text-align: center;
-        }
-
-        .diffrent-subtitle {
-            padding: 0 20px;
-        }
-
-        /* Логотипы партнеров */
-        .partners-logos {
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 15px;
+            z-index: 9999;
         }
 
-        .partners-logos div {
-            font-size: 24px;
-            text-align: center;
+        #preloader img {
+            width: 150px;
+            height: auto;
+            /* Без анимации */
         }
 
-        .partners-header-text {
-            font-size: 25px;
-            text-align: center;
-        }
-
-        .showcase-info {
-            font-size: 14px;
-        }
-
-        .partners-container {
-            display: flex;
-            flex-wrap: nowrap;
-            padding: 0;
-            margin: 0;
-        }
-
-        .partners-header {
-            display: flex;
-            flex-wrap: nowrap;
-            text-wrap: nowrap;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Секция "Different" */
-        .different-line {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .different-icon {
+        /* Скрываем основной контент пока грузится */
+        #content {
             display: none;
         }
 
-        .section-different__line {
-            font-size: 36px;
-            text-align: center;
-            margin: auto;
+
+        :root {
+            --font-family: "Benzin-Medium", sans-serif;
+            --second-family: "PP Neue Machina", sans-serif;
+            --third-family: "Benzin-Regular", sans-serif;
+            --font3: "Benzin-Bold", sans-serif;
         }
 
-        .diffrent-subtitle {
-            font-size: 16px;
-            text-align: left;
-            word-wrap: break-word;
-            text-wrap: wrap;
+        body {
+            background-color: #fff;
+            color: #000;
         }
 
-        /* Section title */
-        .section-title {
-            font-size: 48px;
-            text-align: center;
+        .site-header {
+            background: #171717;
+            padding: 22px 0;
+            border-radius: 100px;
+            margin-left: 42px;
+            margin-right: 42px;
+            margin-top: 40px;
         }
 
-        .showcase-title {
-            font-size: 20px;
-            text-align: center;
-            padding: 0;
-            padding-top: 25px;
+        .header-container {
+            max-width: 1646px;
+            margin: 0 auto;
+            padding: 0 42px;
         }
 
-        .filter-btn {
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .text-block {
-            padding: 0 20px;
-        }
-
-        .btn-secondary {
-            min-width: 130px;
-            padding: 10px 16px;
-            font-size: 13px;
-        }
-
-        .section-title {
-            font-size: 24px;
-        }
-
-        .payment-description {
-            margin-top: 20px;
-            text-wrap: wrap;
-        }
-
-        .section-title {
-            font-size: 24px;
-        }
-
-        .payment-description {
-            font-size: 15px;
-        }
-
-        .footer-content {
-            justify-content: space-around;
-        }
-
-        .footer-contacts,
-        .footer-logo,
-        .footer-socials {
-            flex: 1 1 200px;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-label .custom-checkbox,
-        .checkbox-label input:checked+.custom-checkbox {
-            width: 16px;
-            height: 16px;
-        }
-
-        textarea::placeholder {
-            font-size: 15px;
-        }
-    }
-
-    /* Телефоны */
-    @media (max-width: 767px) {
-        .form-wrapper {
-            width: 95%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .samo {
-            font-size: 16px;
-        }
-
-        .form-wrapper {
-            width: 95%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .form-row,
-        .radio-group {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .project-descriptions {
-            font-size: 20px;
-            text-align: center;
-        }
-
-
-        .form-group input {
-            max-width: 100%;
-            font-size: 14px;
-            padding: 12px 10px;
-
-        }
-
-        .form-group label {
-            font-size: 18px;
-            padding: 8px;
-        }
-
-        input::placeholder {
-            font-size: 14px;
-        }
-
-        .agree {
-            font-size: 15px;
-            font-style: italic;
-        }
-
-        .checkbox-label .custom-checkbox,
-        .checkbox-label input:checked+.custom-checkbox {
-            width: 14px;
-            height: 14px;
-        }
-
-        .btn-submit {
-            font-size: 12px;
-            padding: 15px 10px;
-        }
-
-        .checkbox-label .custom-checkbox {
-            width: 18px;
-            height: 18px;
-        }
-
-        .footer-content {
-            flex-direction: column;
+        .site-nav {
+            display: flex;
             align-items: center;
-            text-align: center;
+            justify-content: space-between;
         }
 
-        .footer-contacts,
-        .footer-logo,
-        .footer-socials {
-            flex: 1 1 100%;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            max-width: 120px;
-        }
-
-
-        .form-row {
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .radio-group {
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group,
-        .form-group-3,
-        .form-group-4,
-        .form-group-5,
-        .form-group-6 {
-            width: 100%;
-            /* растягиваем все блоки */
-            box-sizing: border-box;
-        }
-
-        /* Скрываем элементы навигации, header и изображения */
-        .site-nav>a.main-logo,
-        .site-nav>.header-btn,
-        .site-header,
-        .eagle-img,
-        .lines-container .lines-img,
-        .portfolio-icon {
-            display: none !important;
-        }
-
-        .payment-container {
-            width: 95%;
-            padding: 15px;
-        }
-
-        .section-title {
-            font-size: 20px;
-        }
-
-        .payment-description {
-            font-size: 14px;
-            text-align: left;
-        }
-
-        /* Главный заголовок */
         .main-title {
-            font-size: 36px;
-            margin-top: 20px;
-            line-height: 1.1;
-            text-align: center;
+            font-family: var(--second-family);
+            font-weight: 800;
+            font-size: clamp(48px, 12vw, 180px);
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            display: block;
+            color: #000;
         }
 
-        /* Подзаголовок */
-        .main-subtitle {
-            font-size: 14px;
-            margin-top: 15px;
-            text-align: center;
-            padding: 0;
+
+        .burger-menu {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
         }
 
-        /* Другие заголовки */
-        .text-title {
-            font-size: 16px;
-        }
-
-        /* Логотипы партнеров */
-        .partners-logos {
-            gap: 10px;
-        }
-
-        .portfolio-section {
+        .burger-icon {
+            width: 28px;
+            height: auto;
             display: block;
         }
 
-        .filters .partners-container {
-            display: flex;
-            flex-wrap: nowrap;
-            padding: 0;
-            margin: 0;
+        .header-btn {
+            font-family: 'Benzin', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            text-align: center;
+            border: none;
+            border-radius: 100px;
+            padding: 12px 24px;
+            background-color: #63d92b;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .partners-header {
+        .header-btn:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+        }
+
+
+        .logo-icon {
+            height: 40px;
+            display: block;
+        }
+
+
+
+        .hero-text {
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: clamp(48px, 10vw, 180px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+        }
+
+
+        .highlight {
+            color: #63d92b;
+        }
+
+        .main-subtitle {
+            font-family: 'Benzin', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.05em;
+            color: #000;
+            padding-left: 100px;
+        }
+
+        .text-block {
+            font-family: 'Benzin', sans-serif;
+            margin-top: 50px;
             display: flex;
-            justify-content: center;
-            margin: auto;
+            flex-direction: column;
+            align-items: center;
+            /* Центровка по горизонтали */
+            /* Расстояние между блоками */
+        }
+
+
+        .text-item {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.05em;
+            color: #63d92b;
+        }
+
+        .text-title {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .text-block-1 {
+            background: #171717;
+            border-radius: 33px;
+            padding: 10px 15px;
+            margin-bottom: 34px;
+        }
+
+        .text-block-2 {
+            border-radius: 33px;
+            padding: 10px 15px;
+            background: #171717;
+            max-width: 949px;
+        }
+
+        .text-block-3 {
+            border-radius: 33px;
+            max-width: 841px;
+            padding: 10px 15px;
+            background: #171717;
+            margin-top: 34px;
+        }
+
+        .lines-img {
+            width: 100%;
+            max-width: 1812px;
+        }
+
+        .lines-container {
+            margin-top: 200px;
+        }
+
+
+        .eagle-container {
+            position: relative;
+        }
+
+        .eagle-img {
+            position: absolute;
+            left: -60px;
+            top: -494px;
+
+        }
+
+
+        .partners-header {
+            text-align: center;
         }
 
         .partners-header-text {
-            font-size: 21px;
+            font-family: 'Benzin', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.04em;
             text-align: center;
+            color: #fff;
+            background-color: #171717;
+            padding: 10px 24px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            width: fit-content;
+            margin: 0 auto;
         }
 
-        /* Секция "Different" */
-        .different-line {
-            flex-direction: column;
+        .partners-logos {
+            width: 100%;
+            background: #171717;
+            display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-around;
+            padding: 43px 0;
+            margin-bottom: 70px;
+            width: 99.5vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+
+        .partners-logos div {
+            font-weight: 400;
+            font-size: 32px;
+            letter-spacing: 0.05em;
             text-align: center;
+            color: #fff;
+            font-family: 'Benzin', sans-serif;
+
+        }
+
+        .partners-container {
+            width: 100%;
+        }
+
+        .section-different__content {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+        }
+
+        .different-line {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .section-different__line {
-            font-size: 26px;
-            line-height: 1.3;
-            text-wrap: nowrap;
-            margin-top: 4.5px;
+            font-family: var(--second-family);
+            font-weight: 800;
+            font-size: 96px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            text-align: right;
+            color: #63d92b;
+        }
+
+        .zapyataya {
+            color: #000;
+        }
+
+        .color {
+            font-weight: 300;
+            color: #000;
         }
 
         .diffrent-subtitle {
-            font-size: 12px;
-            text-align: right;
-            text-wrap: wrap;
-        }
-
-        /* Section title */
-        .section-title {
-            font-size: 36px;
+            font-family: 'Benzin', sans-serif;
+            font-weight: 400;
+            font-size: 23px;
             text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #000;
+            white-space: nowrap;
+
+            /* запретить перенос текста */
+            overflow: hidden;
+            /* скрыть лишнее, если не влезает */
+            text-overflow: ellipsis;
+            /* добавить троеточие, если текст обрезается */
         }
 
-        .showcase-info {
-            font-size: 20px;
-            margin: 0;
-        }
 
-        .btn-cta-secondary {
-            margin: 0;
-        }
 
-        .portfolio-filters {
+        .portfolio-header {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            align-items: center;
+            gap: 19px;
+            justify-content: space-between;
+        }
+
+        .section-title {
+            font-weight: 400;
+            font-size: 64px;
+            letter-spacing: 0.05em;
+            color: #000;
+            font-family: 'Benzin', sans-serif;
+        }
+
+        .text-dad {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+
+        .portfolio-filters {
+            background: #000;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            height: 127px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .filter-btn {
+            font-family: 'Benzin';
+            font-weight: 500;
+            font-size: 20px;
+            letter-spacing: 0.05em;
+            text-align: center;
+            color: #000;
+            background: #fff;
+            border: none;
+            border-radius: 100px;
+            height: 56px;
+            width: 246px;
+        }
+
+
+        .filter-btn:hover {
+            color: #fff;
+            border-radius: 100px;
+            background-color: #63d92b;
+        }
+
+
+        .portfolio-showcase {
+            background: #000;
+            width: 99.5vw;
+            /* вся ширина окна браузера */
+            margin-left: calc(-50vw + 50%);
+            /* выровнять по центру относительно контейнера */
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 40px 20px;
+        }
+
+        .showcase-title {
+            font-weight: 400;
+            font-size: 32px;
+            margin-top: 50px;
+            padding-left: 87px;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+            font-family: 'Benzin', sans-serif;
+            color: #fff;
+        }
+
+
+        .showcase-swiper {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+        }
+
+        /* Сброс стилей Swiper'а и задание своих */
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 56px !important;
+            height: 56px !important;
+            background: transparent !important;
+        }
+
+        /* Стили для SVG-кнопок */
+        .custom-swiper-btn {
+            width: 56px;
+            height: 56px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
+
+        /* Отступы от краёв слайдера */
+        .swiper-button-prev {
+            left: -70px;
+        }
+
+        .swiper-button-next {
+            right: -70px;
+        }
+
+        /* Чтобы SVG не сжимался */
+        .custom-swiper-btn svg {
+            width: 56px;
+            height: 56px;
+            display: block;
+        }
+
+        .swiper {
+            position: relative;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .swiper-button-prev:focus,
+        .swiper-button-next:focus,
+        .swiper-button-prev:active,
+        .swiper-button-next:active {
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            display: none !important;
+        }
+
 
         .showcase-footer {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            gap: 70px;
-            align-items: center;
-            text-align: center;
+            align-items: flex-end;
+            gap: 150px;
+            /* фиксированный отступ между блоками */
             width: 100%;
-            margin: 0;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            color: white;
         }
 
-        .step-row {
-            flex-direction: column;
-            align-items: center;
+
+        .showcase-info {
+            font-family: 'PPNeueMachina', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            letter-spacing: 0.05em;
+            margin-top: 30px;
+            color: #fff;
         }
 
-        .btn-secondary {
-            width: 100%;
-            max-width: 300px;
-            padding: 10px;
-            font-size: 12px;
+
+        .btn-cta-secondary {
+            font-family: 'Benzin', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            border: none;
+            border-radius: 100px;
+            padding: 12px 24px;
+            background-color: #63d92b;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+
+        .btn-cta-secondary:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
         }
 
         .step-title {
-            font-size: 28px;
-            text-align: center;
+            font-family: 'Benzin', sans-serif;
+            font-weight: 400;
+            font-size: 64px;
+            letter-spacing: 0.05em;
+            color: #000;
+            margin: 22px 0;
         }
 
-        .section-title {
-            font-size: 20px;
+        .service-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
-        .section-title {
+        /* Ряды */
+        .step-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .row-1 {
+            margin-top: 22px;
+        }
+
+        .row-3 {
+            margin-bottom: 22px;
+        }
+
+        /* Кнопки */
+        .btn-secondary {
+            font-family: 'Benzin', sans-serif;
+            font-weight: 400;
             font-size: 20px;
+            text-transform: uppercase;
+            height: 84px;
+            border: none;
+            border-radius: 100px;
+            background-color: #000;
+            color: #fff;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Индивидуальные ширины */
+        .btn-step-1 {
+            width: 437px;
+        }
+
+        .btn-step-2 {
+            width: 558px;
+        }
+
+        .btn-step-3 {
+            width: 380px;
+        }
+
+        .btn-step-4 {
+            width: 486px;
+        }
+
+        .btn-step-5 {
+            width: 486px;
+        }
+
+        .btn-step-6 {
+            width: 410px;
+        }
+
+        .btn-step-7 {
+            width: 226px;
+        }
+
+        .btn-step-8 {
+            width: 226px;
         }
 
         .payment-description {
-            font-size: 14px;
-            text-align: left;
+            font-family: 'PPNeueMachina', sans-serif;
+            text-wrap: nowrap;
+            font-weight: 400;
+            font-size: 38px;
+            letter-spacing: 0.05em;
+            color: #000;
         }
 
-        .payment-container {
-            width: 95%;
-            padding: 15px;
+
+        .form-wrapper {
+            border-radius: 30px;
+            width: 100%;
+            max-width: 1548px;
+            height: auto;
+            background: #171717;
+            padding: 60px;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
-    }
+
+        input,
+        textarea {
+            font-family: 'PP Neue Machina';
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: 0.05em;
+            color: #969696;
+        }
+
+        .samo {
+            font-family: 'PP Neue Machina';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .agree {
+            font-family: 'PP Neue Machina';
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        label {
+            font-family: 'PP Neue Machina';
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .form-group-3 label {
+            font-family: 'PP Neue Machina';
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+            display: block;
+        }
+
+        .form-group input {
+            padding: 20px;
+        }
+
+        .form-group-3 input {
+            border-radius: 30px;
+            width: 100%;
+            background: #fff;
+            margin-top: 20px;
+            font-weight: 800;
+            font-size: 24px;
+            border: none;
+            letter-spacing: 0.05em;
+            color: #969696;
+            box-sizing: border-box;
+
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            /* Отступ между группами полей */
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* Отступ между полем имени и телефона */
+        }
+
+        .form-group {
+            flex: 1;
+            /* Чтобы группы делили пространство поровну */
+        }
+
+        .form-group label {
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+            display: block;
+            /* Сделал label блочным */
+        }
+
+        .tip-of-client {
+            margin-top: 40px;
+            /* Отступ сверху для блока с выбором клиента */
+            color: #fff;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .form-group input {
+            border-radius: 30px;
+            width: 100%;
+            /* Установил 100% для адаптивности */
+            /* Убрал padding-left и добавил padding */
+            border: none;
+            background: #fff;
+            margin-top: 20px;
+            /* Отступ между label и input */
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #969696;
+            box-sizing: border-box;
+            /* Добавил box-sizing */
+        }
+
+        .btn-submit {
+            padding: 20px;
+            font-weight: bolder;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 40px;
+            /* Отступ между радио-кнопками */
+            margin-top: 20px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* Отступ между кастомным радио и текстом */
+            font-size: 18px;
+            /* Немного уменьшил размер, чтобы было похоже на макет */
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .custom-radio {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: transparent;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-radio::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #63d92b;
+            /* Цвет активного состояния */
+            transform: scale(0);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        input[type="radio"]:checked+.custom-radio::after {
+            transform: scale(1);
+        }
+
+        input[type="radio"] {
+            display: none;
+            /* Скрываем стандартную радио-кнопку */
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* Отступ между кастомным чекбоксом и текстом */
+            font-size: 18px;
+            /* Размер шрифта для текста */
+            color: #fff;
+            margin-top: 40px;
+            /* Отступ сверху */
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            background: #595959;
+            border-radius: 15px;
+            width: 33px;
+            height: 33px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-group-6 {
+            display: flex;
+            gap: 25px;
+        }
+
+        .custom-checkbox::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: #63d92b;
+            /* Цвет активного состояния */
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        input[type="checkbox"]:checked+.custom-checkbox::after {
+            opacity: 1;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+            /* Скрываем стандартный чекбокс */
+        }
+
+        .btn-submit {
+            background: #63d92b;
+            border-radius: 100px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 32px;
+            letter-spacing: 0.05em;
+            text-align: center;
+            color: #000;
+            font-family: 'Benzin', sans-serif;
+            border: none;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+
+        .form-group-4 {
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .project-descriptions {
+            text-wrap: nowrap;
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: 0.05em;
+            font-family: 'PP Neue Machina';
+            color: #fff;
+        }
+
+        .portfolio-container {
+            max-width: 1646px;
+            margin: auto;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        textarea {
+            border-radius: 30px;
+            width: 100%;
+            background: #fff;
+            border: none;
+            padding: 30px;
+            box-sizing: border-box;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #969696;
+            margin-top: 20px;
+            height: 200px;
+            /* Установил высоту для текстовой области */
+            resize: none;
+            /* Запретил изменять размер */
+        }
+
+        .form-wrapper {
+            width: 100%;
+            padding: clamp(20px, 5vw, 100px);
+        }
+
+        textarea::placeholder {
+            color: #969696;
+        }
+
+        .main-footer {
+            background: #000;
+            font-family: 'PPNeueMachina', sans-serif;
+            color: #fff;
+            padding: 60px;
+            /* Отступы сверху, снизу и по бокам */
+            font-family: 'Arial', sans-serif;
+            /* Замените на ваши шрифты, если они другие */
+            position: relative;
+            /* Синяя полоска сверху */
+        }
+
+        .footer-content {
+            display: flex;
+            padding-top: 122px;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Элементы выравниваются по верхнему краю */
+            max-width: 1548px;
+            /* Максимальная ширина контента */
+            margin: 0 auto;
+            text-align: left;
+            /* Выравнивание текста */
+        }
+
+        .footer-heading {
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .footer-contacts,
+        .footer-socials {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* Отступ между строками контактов и ссылок */
+        }
+
+        .contact-link,
+        .social-link {
+            font-family: 'PPNeueMachina', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .contact-link:hover,
+        .social-link:hover {
+            color: #ccc;
+        }
+
+        .contact-address {
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+
+        .logo-description {
+            font-family: 'PPNeueMachina', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 112%;
+            letter-spacing: 0.05em;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            max-width: 1548px;
+            margin: 40px auto 0;
+            /* Отступ сверху */
+            text-align: right;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+            opacity: 0.6;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            padding: 100px;
+            /* для больших экранов */
+        }
+
+        /* Планшеты и меньше */
+        @media (max-width: 1024px) {
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .form-wrapper {
+                max-width: 500px;
+                width: 100%;
+            }
+
+            .project-descriptions {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-wrapper {
+                width: 100%;
+                padding: 100px;
+
+            }
+
+            input {
+                max-width: 260px;
+                font-size: 15px;
+
+            }
+
+            input::placeholder {
+                font-size: 15px;
+            }
+
+            .form-row,
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .form-group,
+            .form-group-3,
+            .form-group-4,
+            .form-group-5,
+            .form-group-6,
+            textarea,
+            .btn-submit {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            /* Скрываем элементы навигации и header */
+            .site-nav>a.main-logo,
+            .site-nav>.header-btn,
+            .site-header,
+            .portfolio-icon {
+                display: none !important;
+            }
+
+            .eagle-img {
+                max-width: 450px;
+            }
+
+
+            /* Главный заголовок */
+            .main-title {
+                font-weight: 800;
+                font-size: 48px;
+                margin-top: 30px;
+                line-height: 1.1;
+                color: #000;
+                word-wrap: break-word;
+                text-wrap: wrap;
+                text-align: center;
+            }
+
+            /* Подзаголовок */
+            .main-subtitle {
+                font-size: 16px;
+                margin-top: 20px;
+                text-align: center;
+                padding: 0;
+            }
+
+            /* Другие заголовки */
+            .text-title {
+                font-size: 18px;
+            }
+
+            .different-line {
+                justify-content: center;
+                margin: auto;
+                text-align: center;
+            }
+
+            .diffrent-subtitle {
+                padding: 0 20px;
+            }
+
+            /* Логотипы партнеров */
+            .partners-logos {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .partners-logos div {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .partners-header-text {
+                font-size: 25px;
+                text-align: center;
+            }
+
+            .showcase-info {
+                font-size: 14px;
+            }
+
+            .partners-container {
+                display: flex;
+                flex-wrap: nowrap;
+                padding: 0;
+                margin: 0;
+            }
+
+            .partners-header {
+                display: flex;
+                flex-wrap: nowrap;
+                text-wrap: nowrap;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Секция "Different" */
+            .different-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .different-icon {
+                display: none;
+            }
+
+            .section-different__line {
+                font-size: 36px;
+                text-align: center;
+                margin: auto;
+            }
+
+            .diffrent-subtitle {
+                font-size: 16px;
+                text-align: left;
+                word-wrap: break-word;
+                text-wrap: wrap;
+            }
+
+            /* Section title */
+            .section-title {
+                font-size: 48px;
+                text-align: center;
+            }
+
+            .showcase-title {
+                font-size: 20px;
+                text-align: center;
+                padding: 0;
+                padding-top: 25px;
+            }
+
+            .filter-btn {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .text-block {
+                padding: 0 20px;
+            }
+
+            .btn-secondary {
+                min-width: 130px;
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .payment-description {
+                margin-top: 20px;
+                text-wrap: wrap;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .payment-description {
+                font-size: 15px;
+            }
+
+            .footer-content {
+                justify-content: space-around;
+            }
+
+            .footer-contacts,
+            .footer-logo,
+            .footer-socials {
+                flex: 1 1 200px;
+                margin-bottom: 20px;
+            }
+
+            .checkbox-label .custom-checkbox,
+            .checkbox-label input:checked+.custom-checkbox {
+                width: 16px;
+                height: 16px;
+            }
+
+            textarea::placeholder {
+                font-size: 15px;
+            }
+        }
+
+        /* Телефоны */
+        @media (max-width: 767px) {
+            .form-wrapper {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .samo {
+                font-size: 16px;
+            }
+
+            .form-wrapper {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .form-wrapper {}
+
+            .form-row,
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .project-descriptions {
+                font-size: 20px;
+                text-align: center;
+            }
+
+
+            .form-group input {
+                max-width: 100%;
+                font-size: 14px;
+                padding: 12px 10px;
+
+            }
+
+            .form-group label {
+                font-size: 18px;
+                padding: 8px;
+            }
+
+            input::placeholder {
+                font-size: 14px;
+            }
+
+            .agree {
+                font-size: 15px;
+                font-style: italic;
+            }
+
+            .checkbox-label .custom-checkbox,
+            .checkbox-label input:checked+.custom-checkbox {
+                width: 14px;
+                height: 14px;
+            }
+
+            .btn-submit {
+                font-size: 12px;
+                padding: 15px 10px;
+            }
+
+            .checkbox-label .custom-checkbox {
+                width: 18px;
+                height: 18px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-contacts,
+            .footer-logo,
+            .footer-socials {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-logo img {
+                max-width: 120px;
+            }
+
+
+            .form-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .form-group,
+            .form-group-3,
+            .form-group-4,
+            .form-group-5,
+            .form-group-6 {
+                width: 100%;
+                /* растягиваем все блоки */
+                box-sizing: border-box;
+            }
+
+            /* Скрываем элементы навигации, header и изображения */
+            .site-nav>a.main-logo,
+            .site-nav>.header-btn,
+            .site-header,
+            .eagle-img,
+            .lines-container .lines-img,
+            .portfolio-icon {
+                display: none !important;
+            }
+
+            .payment-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .payment-description {
+                font-size: 14px;
+                text-align: left;
+            }
+
+            /* Главный заголовок */
+            .main-title {
+                font-size: 36px;
+                margin-top: 20px;
+                line-height: 1.1;
+                text-align: center;
+            }
+
+            /* Подзаголовок */
+            .main-subtitle {
+                font-size: 14px;
+                margin-top: 15px;
+                text-align: center;
+                padding: 0;
+            }
+
+            /* Другие заголовки */
+            .text-title {
+                font-size: 16px;
+            }
+
+            /* Логотипы партнеров */
+            .partners-logos {
+                gap: 10px;
+            }
+
+            .portfolio-section {
+                display: block;
+            }
+
+            .filters .partners-container {
+                display: flex;
+                flex-wrap: nowrap;
+                padding: 0;
+                margin: 0;
+            }
+
+            .partners-header {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+            }
+
+            .partners-header-text {
+                font-size: 21px;
+                text-align: center;
+            }
+
+            /* Секция "Different" */
+            .different-line {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .section-different__line {
+                font-size: 26px;
+                line-height: 1.3;
+                text-wrap: nowrap;
+                margin-top: 4.5px;
+            }
+
+            .diffrent-subtitle {
+                font-size: 12px;
+                text-align: right;
+                text-wrap: wrap;
+            }
+
+            /* Section title */
+            .section-title {
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .showcase-info {
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .btn-cta-secondary {
+                margin: 0;
+            }
+
+            .portfolio-filters {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .showcase-footer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 70px;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                margin: 0;
+            }
+
+            .step-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .step-title {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .section-title {
+                margin-bottom: 20px;
+                margin-top: 30px;
+            }
+
+            .form-section {
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .payment-description {
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .payment-container {
+                width: 95%;
+                padding: 15px;
+            }
+        }
