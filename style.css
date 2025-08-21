@@ -1422,13 +1422,15 @@
             .eagle-container {
                 position: relative;
             }
-            .eagle-img{
+
+            .eagle-img {
                 position: absolute;
                 top: -245px;
                 left: -20px;
                 max-width: 450px;
             }
-           .lines-container .lines-img{
+
+            .lines-container .lines-img {
                 width: 500px;
             }
 
@@ -1444,6 +1446,9 @@
             .payment-description {
                 font-size: 14px;
                 text-align: left;
+            }
+            .partners-header{
+                padding-top: 100px;
             }
 
             /* Главный заголовок */
