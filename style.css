@@ -63,15 +63,7 @@
 
 
 
-        /* ✅ Сброс отступов, чтобы убрать скролл */
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        #preloader {
+        */ #preloader {
             position: fixed;
             top: 0;
             left: 0;
@@ -679,9 +671,7 @@
             max-width: 1548px;
             height: auto;
             background: #171717;
-            padding: 60px;
             box-sizing: border-box;
-            margin: 0 auto;
         }
 
         input,
@@ -724,7 +714,6 @@
             font-family: 'PP Neue Machina';
             font-weight: 800;
             font-size: 24px;
-            line-height: 112%;
             letter-spacing: 0.05em;
             color: #fff;
             display: block;
@@ -732,6 +721,12 @@
 
         .form-group input {
             padding: 20px;
+            font-family: 'PP Neue Machina';
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: 0.05em;
+            color: #fff;
+            display: block;
         }
 
         .form-group-3 input {
@@ -970,10 +965,6 @@
             /* Запретил изменять размер */
         }
 
-        .form-wrapper {
-            width: 100%;
-            padding: clamp(20px, 5vw, 100px);
-        }
 
         textarea::placeholder {
             color: #969696;
@@ -1070,7 +1061,6 @@
         .form-wrapper {
             width: 100%;
             padding: 100px;
-            /* для больших экранов */
         }
 
         /* Планшеты и меньше */
@@ -1174,6 +1164,23 @@
 
             .diffrent-subtitle {
                 padding: 0 20px;
+            }
+
+            input,
+            input::placeholder {
+                font-family: 'ВашШрифт', sans-serif;
+                font-weight: 700;
+                letter-spacing: 1px;
+                /* одинаковый интервал */
+                text-transform: uppercase;
+                -webkit-text-size-adjust: none;
+                /* отключает авто-увеличение шрифта на iOS */
+            }
+
+            input::placeholder {
+                color: #888;
+                opacity: 1;
+                /* убрать полупрозрачность */
             }
 
             /* Логотипы партнеров */
@@ -1338,15 +1345,11 @@
 
             .form-group input {
                 max-width: 100%;
-                font-size: 14px;
                 padding: 12px 10px;
 
             }
 
-            .form-group label {
-                font-size: 18px;
-                padding: 8px;
-            }
+
 
             input::placeholder {
                 font-size: 14px;
@@ -1452,10 +1455,7 @@
                 padding-top: 100px;
             }
 
-            .form-group label {
-                text-align: center;
-                font-size: 13px;
-            }
+
 
             /* Главный заголовок */
             .main-title {
