@@ -1447,8 +1447,14 @@
                 font-size: 14px;
                 text-align: left;
             }
-            .partners-header{
+
+            .partners-header {
                 padding-top: 100px;
+            }
+
+            .form-group label {
+                text-align: center;
+                font-size: 13px;
             }
 
             /* Главный заголовок */
