@@ -1091,11 +1091,7 @@
 
             }
 
-            input {
-                max-width: 260px;
-                font-size: 15px;
 
-            }
 
             input::placeholder {
                 font-size: 15px;
@@ -1164,23 +1160,6 @@
 
             .diffrent-subtitle {
                 padding: 0 20px;
-            }
-
-            input,
-            input::placeholder {
-                font-family: 'ВашШрифт', sans-serif;
-                font-weight: 700;
-                letter-spacing: 1px;
-                /* одинаковый интервал */
-                text-transform: uppercase;
-                -webkit-text-size-adjust: none;
-                /* отключает авто-увеличение шрифта на iOS */
-            }
-
-            input::placeholder {
-                color: #888;
-                opacity: 1;
-                /* убрать полупрозрачность */
             }
 
             /* Логотипы партнеров */
@@ -1315,9 +1294,9 @@
         /* Телефоны */
         @media (max-width: 767px) {
             .form-wrapper {
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
+                /* width: 100%; */
+                padding: 20px 29px;
+
             }
 
             .samo {
@@ -1360,20 +1339,6 @@
                 font-style: italic;
             }
 
-            .label {
-                letter-spacing: 2px;
-                /* такой же интервал как на пк */
-            }
-
-            /* Input */
-            input {
-                letter-spacing: 2px;
-            }
-
-            /* Placeholder */
-            input::placeholder {
-                letter-spacing: 2px;
-            }
 
             .checkbox-label .custom-checkbox,
             .checkbox-label input:checked+.custom-checkbox {
